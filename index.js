@@ -11,7 +11,7 @@ const corsOption = { credentials: true };
 corsOption.origin =
 	mode === "development"
 		? "http://localhost:5173"
-		: "https://artick-app.vercel.app/";
+		: "https://artick-app.vercel.app";
 
 const { sequelize: db } = require("./models/index.js");
 const models = require("./models");
