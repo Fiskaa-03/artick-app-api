@@ -8,8 +8,7 @@ const EventRoute = require("./routes/EventRoute.js");
 const cors = require("cors");
 const mode = process.env.NODE_ENV || "development";
 const corsOption = { credentials: true };
-corsOption.origin =
-	mode === "development" ? "http://localhost:5173" : "https://artick.store";
+corsOption.origin = mode === "development" ? "http://localhost:5173" : "";
 
 const { sequelize: db } = require("./models/index.js");
 const models = require("./models");
