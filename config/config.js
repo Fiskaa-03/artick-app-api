@@ -1,11 +1,11 @@
 module.exports = {
 	development: {
 		username: "root",
-		password: null,
+		password: "!Simple123",
 		database: "artick_db",
 		host: "127.0.0.1",
 		dialect: "mariadb",
-		port: 3307,
+		port: 3308,
 	},
 	test: {
 		username: "root",
