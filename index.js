@@ -22,7 +22,7 @@ const models = require("./models");
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || "5000";
 
 try {
 	db.authenticate();
@@ -42,6 +42,6 @@ app.get("/", async (req, res) => {
 	res.status(200).send("API delivered successfully");
 });
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
 	console.log(`Example app listening on port ${port}`);
 });
