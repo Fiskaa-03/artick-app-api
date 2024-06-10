@@ -14,7 +14,7 @@ module.exports = {
 		password: null,
 		database: "artick_db_test",
 		host: "127.0.0.1",
-		dialect: "mariadb",
+		dialect: "mysql",
 	},
 	production: {
 		username: process.env.DB_USERNAME,
