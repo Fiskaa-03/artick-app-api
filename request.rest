@@ -1,0 +1,16 @@
+GET http://localhost:5000/events
+
+###
+
+POST http://localhost:5000/event
+Content-Type: application/json
+
+{
+  "eventName": "Winter Festival",
+  "description": "Winterrrr",
+  "price": "200000",
+  "place": "Japan"
+}
+
+###
+7828727000130136
