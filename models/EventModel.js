@@ -15,6 +15,7 @@ const Event = db.define(
 		category: DataTypes.ENUM("CONCERT", "THEATER", "FILM"),
 		poster: DataTypes.STRING,
 		link: DataTypes.STRING,
+		sold: DataTypes.INTEGER,
 	},
 	{
 		freezeTableName: true,
