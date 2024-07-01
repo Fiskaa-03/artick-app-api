@@ -6,11 +6,12 @@ POST http://localhost:5000/event
 Content-Type: application/json
 
 {
-  "eventName": "Winter Festival",
-  "description": "Winterrrr",
-  "price": "200000",
-  "category": "CONCERT",
-  "place": "Japan"
+  "eventName": "MAYA",
+  "description": "Maya, seorang perempuan berbakat yang memiliki kemampuan setara dengan seorang sarjana. Dia akan mengikuti lomba dan menemukan lawan yang sepadan dengannya, apakah dia akan mengalahkannya?",
+  "price": "20000",
+  "category": "FILM",
+  "place": "Denpasar, Bali",
+  "link": "https://lynk.id/fiska/qpDWjyr"
 }
 
 ###

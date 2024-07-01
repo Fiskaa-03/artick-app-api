@@ -12,8 +12,9 @@ const Event = db.define(
 			defaultValue: db.literal("CURRENT_TIMESTAMP"),
 		},
 		place: DataTypes.STRING,
-		category: DataTypes.ENUM("CONCERT", "THEATER"),
+		category: DataTypes.ENUM("CONCERT", "THEATER", "FILM"),
 		poster: DataTypes.STRING,
+		link: DataTypes.STRING,
 	},
 	{
 		freezeTableName: true,

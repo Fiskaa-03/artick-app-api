@@ -29,8 +29,10 @@ class EventController {
 			const createdEvent = {
 				eventName: req.body.eventName,
 				description: req.body.description,
+				category: req.body.category,
 				price: req.body.price,
 				place: req.body.place,
+				link: req.body.link,
 			};
 			await Event.create(createdEvent);
 			res.status(201).json({ msg: "Event Created" });
