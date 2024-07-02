@@ -6,12 +6,12 @@ POST http://localhost:5000/event
 Content-Type: application/json
 
 {
-  "eventName": "MAYA",
-  "description": "Maya, seorang perempuan berbakat yang memiliki kemampuan setara dengan seorang sarjana. Dia akan mengikuti lomba dan menemukan lawan yang sepadan dengannya, apakah dia akan mengalahkannya?",
-  "price": "20000",
-  "category": "FILM",
-  "place": "Denpasar, Bali",
-  "link": "https://lynk.id/fiska/qpDWjyr"
+  "eventName": "SALVARION",
+  "description": "Kelima pendekar mengelilingi kota demi memusnahkan iblis?! Iblis yang memiliki mata pada sayapnya,dan tidak terkalahkan! Akankah mereka bisa menyelamatkan manusia dari iblis pembunuh itu? Saksikan perjuangan dan keseruan mereka hanya di Teater Bagol!",
+  "price": "40000",
+  "category": "THEATER",
+  "place": "Dharma Negara Alaya, Denpasar, Bali",
+  "link": "https://lynk.id/fiska/M1Nz6nx"
 }
 
 ###
