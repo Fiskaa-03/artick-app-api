@@ -1,6 +1,7 @@
 const User = require("../models/UserModel.js");
 
 const verifyUser = async (req, res, next) => {
+	console.log("😊😊", req.session.userId);
 	if (!req.session.userId) {
 		return res.status(401).json({ msg: "Mohon login ke akun anda" });
 	}
