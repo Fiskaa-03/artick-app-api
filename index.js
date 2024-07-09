@@ -41,7 +41,7 @@ app.get("/", async (req, res) => {
 app.use(
 	session({
 		secret: process.env.SESS_SECRET,
-		resave: false,
+		resave: true,
 		saveUninitialized: true,
 		cookie: {
 			secure: "auto",
