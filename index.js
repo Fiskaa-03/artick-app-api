@@ -1,6 +1,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
+const session = require("express-session");
+const MemoryStore = require("memorystore")(session);
 
 const UserRoute = require("./routes/UserRoute");
 const EventRoute = require("./routes/EventRoute.js");
@@ -32,16 +34,30 @@ try {
 	console.error("Unable to connect to the database:", error);
 }
 
+app.get("/", async (req, res) => {
+	res.status(200).send("API delivered successfully");
+});
+
+app.use(
+	session({
+		secret: process.env.SESS_SECRET,
+		resave: false,
+		saveUninitialized: true,
+		cookie: {
+			secure: "auto",
+		},
+		store: new MemoryStore({
+			checkPeriod: 86400000,
+		}),
+	})
+);
+
 app.use(express.json());
 app.use(express.static("public"));
 
 app.use(cors(corsOption));
 app.use(UserRoute);
 app.use(EventRoute);
-
-app.get("/", async (req, res) => {
-	res.status(200).send("API delivered successfully");
-});
 
 app.listen(port, "0.0.0.0", () => {
 	console.log(`Example app listening on port ${port}`);

@@ -6,7 +6,7 @@ module.exports = {
 		password: "!Simple123",
 		database: "artick_db",
 		host: "127.0.0.1",
-		dialect: "mariadb",
+		dialect: "mysql",
 		port: 3308,
 	},
 	test: {
