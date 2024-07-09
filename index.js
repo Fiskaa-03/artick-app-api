@@ -48,7 +48,7 @@ app.use(
 		proxy: true,
 		cookie: {
 			secure: "auto",
-			// sameSite: "none",
+			sameSite: "none",
 		},
 		store: new MemoryStore({
 			checkPeriod: 86400000,
