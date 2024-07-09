@@ -41,10 +41,12 @@ app.get("/", async (req, res) => {
 app.use(
 	session({
 		secret: process.env.SESS_SECRET,
-		resave: true,
+		resave: false,
 		saveUninitialized: true,
 		cookie: {
-			secure: "auto",
+			secure: "true",
+			httpOnly: true,
+			sameSite: "none",
 		},
 		store: new MemoryStore({
 			checkPeriod: 86400000,
