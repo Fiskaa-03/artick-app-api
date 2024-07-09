@@ -44,8 +44,7 @@ app.use(
 		resave: false,
 		saveUninitialized: true,
 		cookie: {
-			secure: "true",
-			httpOnly: true,
+			secure: "auto",
 			sameSite: "none",
 		},
 		store: new MemoryStore({
