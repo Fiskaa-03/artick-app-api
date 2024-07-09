@@ -38,14 +38,17 @@ app.get("/", async (req, res) => {
 	res.status(200).send("API delivered successfully");
 });
 
+app.enable("trust proxy");
+
 app.use(
 	session({
 		secret: process.env.SESS_SECRET,
 		resave: false,
 		saveUninitialized: true,
+		proxy: true,
 		cookie: {
 			secure: "auto",
-			sameSite: "none",
+			// sameSite: "none",
 		},
 		store: new MemoryStore({
 			checkPeriod: 86400000,
