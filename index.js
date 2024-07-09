@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const MemoryStore = require("memorystore")(session);
+const sequelizeStore = require("connect-session-sequelize");
 
 const UserRoute = require("./routes/UserRoute");
 const EventRoute = require("./routes/EventRoute.js");
@@ -15,17 +16,17 @@ corsOption.origin =
 
 const { sequelize: db } = require("./models/index.js");
 const models = require("./models");
-// const Event = require("./models/EventModel.js");
-// const User = require("./models/UserModel.js");
 // models.sequelize.sync({ alter: true });
-// async function renameColumn() {
-// 	await db.query("ALTER TABLE event RENAME COLUMN event_name TO eventName;");
-// }
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || "5000";
+
+const sessionStore = sequelizeStore(session.Store);
+const store = new sessionStore({
+	db: db,
+});
 
 try {
 	db.authenticate();
@@ -50,9 +51,7 @@ app.use(
 			secure: "auto",
 			sameSite: "none",
 		},
-		store: new MemoryStore({
-			checkPeriod: 86400000,
-		}),
+		store: store,
 	})
 );
 
@@ -62,6 +61,8 @@ app.use(express.static("public"));
 app.use(cors(corsOption));
 app.use(UserRoute);
 app.use(EventRoute);
+
+store.sync();
 
 app.listen(port, "0.0.0.0", () => {
 	console.log(`Example app listening on port ${port}`);
